@@ -9,16 +9,12 @@ const app = express();
 
 conectarDB();
 
-
 //Habilitar cors
 app.use(cors());
 
 
 //Habilitar express.json
-
 app.use(express.json( {extended:true} ));
-
-
 
 //Puerto de la app
 const port = process.env.port || 4000;
@@ -28,9 +24,6 @@ app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/tareas', require('./routes/tareas'));
 app.use('/api/proyectos', require('./routes/proyectos'));
-
-//Agrego cambios
-
 
 //Arranca la app
 app.listen(port,'0.0.0.0', () => {
